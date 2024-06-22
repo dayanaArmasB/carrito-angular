@@ -1,0 +1,12 @@
+<h2>Catálogo de Productos</h2>
+
+<app-catalogo [listaProductos] = "listaProductos" (productoEventEmitter) = "onAgregarCarrito($event)"></app-catalogo>
+
+@if(items.length > 0){
+    <app-carrito [items] = "items" (idProductoEventEmitter) = "onDeleteCarrito($event)"></app-carrito>
+}@else{
+    <div class="alert alert-warning">
+        no hay elementos en el carrito
+    </div>
+}
+
